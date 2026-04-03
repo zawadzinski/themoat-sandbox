@@ -6,7 +6,7 @@
 <title>Hard2beat: THE MOAT — Warsaw, 23 September 2026</title>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--g1:#2B3978;--g2:#6F0080;--bg:#0c0c14;--bg2:#10101c;--bgc:#14142a;--bgch:#191938;--t:#eeedf2;--ts:#9b99a8;--tm:#5c5a6a;--al:#9b30b0;--ag:rgba(111,0,128,.25);--bd:#252540;--bl:#333358;--f:'Inter',system-ui,-apple-system,sans-serif}
+:root{--g1:#2B3978;--g2:#6F0080;--bg:#0c0c14;--bg2:#10101c;--bgc:#14142a;--bgch:#191938;--t:#eeedf2;--ts:#9b99a8;--tm:#8a8898;--al:#9b30b0;--ag:rgba(111,0,128,.25);--bd:#252540;--bl:#333358;--f:'Inter',system-ui,-apple-system,sans-serif}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{font-family:var(--f);background:var(--bg);color:var(--t);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
@@ -56,7 +56,7 @@ section{padding:100px 0;position:relative}
 .pillar .pd{width:5px;height:5px;background:var(--al);border-radius:50%;flex-shrink:0}
 .hero-meta{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;margin-bottom:44px;animation:fadeUp .8s ease-out .6s both}
 .meta-item{text-align:center}
-.meta-label{font-size:10px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--tm);margin-bottom:4px}
+.meta-label{font-size:11px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--tm);margin-bottom:4px}
 .meta-value{font-size:15px;font-weight:600;color:var(--t)}
 .hero-cta{animation:fadeUp .8s ease-out .7s both}
 
@@ -77,7 +77,7 @@ section{padding:100px 0;position:relative}
 .e-card-num{font-size:11px;font-weight:700;letter-spacing:2px;color:var(--tm);margin-bottom:16px}
 .e-card h3{font-size:20px;font-weight:700;margin-bottom:12px;line-height:1.3}
 .e-card p{font-size:14px;color:var(--ts);line-height:1.7}
-.e-card .tag{display:inline-block;margin-top:14px;padding:4px 10px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--al);color:var(--al)}
+.e-card .tag{display:inline-block;margin-top:14px;padding:4px 10px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--al);color:var(--al)}
 .e-card--featured{border-left:2px solid var(--al);background:var(--bgch)}
 .e-card--featured:hover{background:#1e1e42}
 /* REVIEWS */
@@ -116,8 +116,23 @@ section{padding:100px 0;position:relative}
 .tl-time{font-size:12px;font-weight:700;letter-spacing:1px;color:var(--tm);padding-top:2px}
 .tl-body h3{font-size:18px;font-weight:700;margin-bottom:6px}
 .tl-body p{font-size:14px;color:var(--ts);line-height:1.7}
-.tl-tag{display:inline-block;margin-top:8px;padding:3px 8px;font-size:10px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--bd);color:var(--tm)}
+.tl-tag{display:inline-block;margin-top:8px;padding:3px 8px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;border:1px solid var(--bd);color:var(--tm)}
 .tl-tag.main{border-color:var(--al);color:var(--al)}
+
+/* VENUE */
+.venue{padding:100px 0}
+.venue-inner{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start;margin-top:56px}
+.venue-address{font-size:22px;font-weight:700;color:var(--t);margin-bottom:8px}
+.venue-street{font-size:14px;color:var(--ts);margin-bottom:28px}
+.venue-desc{font-size:14px;color:var(--ts);line-height:1.7;margin-bottom:28px}
+.venue-links{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.venue-links a{align-self:flex-start}
+.venue-map{width:100%;height:220px;border:1px solid var(--bd);filter:grayscale(1) invert(1) brightness(.8);margin-top:4px}
+.venue-photos{display:grid;grid-template-columns:1fr 1fr;gap:4px}
+.venue-photo{height:190px;overflow:hidden}
+.venue-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
+.venue-photo:hover img{transform:scale(1.04)}
+@media(max-width:900px){.venue-inner{grid-template-columns:1fr}}
 
 /* ABOUT H2B */
 .about{padding:100px 0}
@@ -130,7 +145,7 @@ section{padding:100px 0;position:relative}
 /* DETAILS */
 .details{border-top:1px solid var(--bd);border-bottom:1px solid var(--bd);background:var(--bgc);padding:48px 0}
 .d-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:32px;text-align:center}
-.d-label{font-size:10px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--tm);margin-bottom:6px}
+.d-label{font-size:11px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--tm);margin-bottom:6px}
 .d-val{font-size:16px;font-weight:700}
 
 /* CTA */
@@ -186,7 +201,8 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     <div class="nav-links">
       <a href="#program">What to Expect</a>
       <a href="#agenda">Agenda</a>
-      <a href="#about">About</a>
+      <a href="#venue">Venue</a>
+      <a href="#about">About Hard2beat</a>
     </div>
     <div class="nav-right">
       <span class="nav-date">23 Sept 2026</span>
@@ -212,7 +228,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     <div class="hero-eyebrow"><span class="dot"></span>Invitation Only · Warsaw, Poland</div>
     <div class="hero-event-name">Hard2beat presents</div>
     <h1 class="hero-title">THE MOAT</h1>
-    <p class="hero-tagline">All you need to know about deep tech in Poland. In one&nbsp;day.</p>
+    <p class="hero-tagline">All you need to know about deep tech in Poland.<br>In one&nbsp;day.</p>
     <div class="hero-pillars">
       <span class="pillar"><span class="pd"></span>High-impact networking</span>
       <span class="pillar"><span class="pd"></span>Top seed deep tech startups fundraising</span>
@@ -236,7 +252,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <div class="label-sm">The Opportunity</div>
       <h2 class="heading-lg">Poland is Europe's fastest-growing tech ecosystem and the <span class="hl">leader in CEE</span> startup value.</h2>
       <div class="body-text">
-        <p>The country's deep tech scene is booming: robotics ranked 5th in Europe, €800M in VC funding deployed in 2025 alone, and global success stories from ElevenLabs to ICEYE proving that Polish engineering can compete at the highest level. Yet the most defensible early-stage technologies remain invisible to international investors. Finding them requires deep local access that most funds simply don't have.</p>
+        <p>Despite €800M in funding and a top-5 ranking in robotics, Poland's best deep tech remains hidden from global investors lacking local networks.</p>
       </div>
     </div>
     <div class="opp-facts reveal" style="transition-delay:.12s">
@@ -244,6 +260,21 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <div class="opp-fact"><div class="of-num">€58B</div><div class="of-desc">Cumulative startup ecosystem value (1st in CEE)</div></div>
       <div class="opp-fact"><div class="of-num">€800M</div><div class="of-desc">VC investment in 2025 across 180 deals</div></div>
       <div class="opp-fact"><div class="of-num">#5</div><div class="of-desc">In Europe for robotics (11th globally)</div></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHY THE MOAT -->
+<section style="padding:80px 0">
+  <div class="container">
+    <div class="opp-inner reveal" style="max-width:680px">
+      <div class="label-sm">Why THE MOAT?</div>
+      <h2 class="heading-lg">Every investment we make has one thing in common: a <span class="hl">technical moat.</span></h2>
+      <div class="body-text">
+        <p>THE MOAT brings together Poland's most defensible early-stage companies and the investors who know how to value them — in one curated afternoon.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -262,12 +293,12 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <div class="e-card reveal">
         <div class="e-card-num">01</div>
         <h3>The Pitch Contest</h3>
-        <p>Top 10 finalists selected from 1,000+ regional projects. Only startups with verified technical moats make it to the stage. Each is stress-tested with expert "Hard Questions" they've never seen before. We do the heavy lifting so you don't have&nbsp;to.</p>
+        <p>Out of 1,000+ projects, only 10 finalists with verified technical moats reach our stage. We stress-test them with rigorous "Hard&nbsp;Questions," doing the heavy lifting so you don't have&nbsp;to.</p>
       </div>
       <div class="e-card e-card--featured reveal" style="transition-delay:.08s">
         <div class="e-card-num">02</div>
-        <h3>10 Guaranteed Founder Meetings</h3>
-        <p>At least 10 targeted 1-on-1 meetings with founders of top-tier Polish deep tech companies, precisely tailored to your investment thesis. You bring the criteria, we deliver the&nbsp;pipeline.</p>
+        <h3>10 Curated 1:1 Meetings</h3>
+        <p>At least 10 targeted meetings with founders and investors precisely matched to your thesis. You bring the criteria, we deliver the&nbsp;pipeline.</p>
         <span class="tag">Matchmaking</span>
       </div>
     </div>
@@ -357,6 +388,36 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     </div>
   </div>
 </section>
+
+<!-- VENUE -->
+<section class="venue" id="venue">
+  <div class="container">
+    <div class="section-head reveal" style="margin-bottom:0">
+      <div class="label-sm">Venue</div>
+      <h2>SEN, <span class="hl">Warsaw</span></h2>
+    </div>
+    <div class="venue-inner">
+      <div class="reveal">
+        <div class="venue-address">SEN Events</div>
+        <div class="venue-street">ul. Wioślarska 6, Warsaw</div>
+        <p class="venue-desc">A riverside event space on the Vistula — modern conference facilities, a rooftop terrace, and a private bar, all steps from the city centre.</p>
+        <div class="venue-links">
+          <a href="https://maps.app.goo.gl/GToXiYZB2UXcjwSNA" target="_blank" class="btn btn-ghost" style="font-size:11px;padding:10px 22px">View on Google Maps →</a>
+          <a href="https://senwarsaw.pl/" target="_blank" class="btn btn-ghost" style="font-size:11px;padding:10px 22px">senwarsaw.pl →</a>
+        </div>
+        <iframe class="venue-map" src="https://maps.google.com/maps?q=Wio%C5%9Blarska+6+Warsaw&output=embed&z=15" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
+      </div>
+      <div class="venue-photos reveal" style="transition-delay:.1s">
+        <div class="venue-photo"><img src="sen-events/sen_1.jpg" alt="SEN — conference room"></div>
+        <div class="venue-photo"><img src="sen-events/sen_2.jpg" alt="SEN — rooftop terrace"></div>
+        <div class="venue-photo"><img src="sen-events/sen_3.jpg" alt="SEN — lounge"></div>
+        <div class="venue-photo"><img src="sen-events/sen_4.jpg" alt="SEN — bar"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
 
 <!-- ABOUT HARD2BEAT -->
 <section class="about" id="about">
