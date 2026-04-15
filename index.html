@@ -82,12 +82,13 @@ section{padding:100px 0;position:relative}
 .e-card--featured:hover{background:#1e1e42}
 /* REVIEWS */
 .reviews{padding:100px 0}
-.reviews-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
 .review-card{padding:36px;border:1px solid var(--bd);background:var(--bgc);position:relative}
 .review-card::before{content:'\201C';font-size:64px;font-weight:900;line-height:1;position:absolute;top:12px;left:24px;background:linear-gradient(135deg,var(--g1),var(--g2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;opacity:.2}
 .review-text{font-size:15px;line-height:1.7;color:var(--t);margin-bottom:24px;font-style:italic;position:relative}
 .review-author{display:flex;align-items:center;gap:12px}
-.review-avatar{width:40px;height:40px;border-radius:50%;background:var(--bd);display:flex;align-items:center;justify-content:center;font-size:14px;font-weight:700;color:var(--tm)}
+.review-avatar{width:40px;height:40px;border-radius:50%;background:var(--bd);overflow:hidden;flex-shrink:0}
+.review-avatar img{width:100%;height:100%;object-fit:cover;display:block}
 .review-info .rn{font-size:14px;font-weight:700;color:var(--t)}
 .review-info .rr{font-size:12px;color:var(--tm)}
 
@@ -206,7 +207,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     </div>
     <div class="nav-right">
       <span class="nav-date">23 Sept 2026</span>
-      <a href="#rsvp" class="nav-cta">Request Invite</a>
+      <a href="https://luma.com/fp73p6ge" target="_blank" class="nav-cta">Request Invite</a>
     </div>
   </div>
 </nav>
@@ -239,7 +240,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <div class="meta-item"><div class="meta-label">Where</div><div class="meta-value">SEN, Warsaw</div></div>
       <div class="meta-item"><div class="meta-label">Format</div><div class="meta-value">&lt;200 guests, invitation-only</div></div>
     </div>
-    <div class="hero-cta"><a href="#rsvp" class="btn btn-accent">Request an Invitation →</a></div>
+    <div class="hero-cta"><a href="https://luma.com/fp73p6ge" target="_blank" class="btn btn-accent">Request an Invitation →</a></div>
   </div>
 </section>
 
@@ -331,16 +332,20 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     </div>
     <div class="reviews-grid">
       <div class="review-card reveal">
-        <p class="review-text">[Placeholder: quote about the quality of dealflow and co-investment opportunities at Hard2beat events.]</p>
-        <div class="review-author"><div class="review-avatar">—</div><div class="review-info"><div class="rn">[Name]</div><div class="rr">[Role, Fund]</div></div></div>
+        <p class="review-text">Looks like a great setup to bring together the right founders and investors. We're looking forward to being there.</p>
+        <div class="review-author"><div class="review-avatar"><img src="testimonials/wwalniczek_balnord.jpeg" alt="Wojciech Walniczak"></div><div class="review-info"><div class="rn">Wojciech Walniczak</div><div class="rr">Partner, OTB Ventures</div></div></div>
       </div>
       <div class="review-card reveal" style="transition-delay:.08s">
-        <p class="review-text">[Placeholder: quote about the caliber of startups and the focused, high-signal format of the event.]</p>
-        <div class="review-author"><div class="review-avatar">—</div><div class="review-info"><div class="rn">[Name]</div><div class="rr">[Role, Fund]</div></div></div>
+        <p class="review-text">Poland's deep tech ecosystem is growing fast, and this is a great moment to showcase it. The event feels like the right platform to do that.</p>
+        <div class="review-author"><div class="review-avatar"><img src="testimonials/wdrewczynski_balnord.jpeg" alt="Wojciech Drewczyński"></div><div class="review-info"><div class="rn">Wojciech Drewczyński</div><div class="rr">Partner, Balnord</div></div></div>
       </div>
-      <div class="review-card reveal" style="transition-delay:.16s">
-        <p class="review-text">[Placeholder: quote about Hard2beat's role in the Polish deep tech ecosystem and screening process.]</p>
-        <div class="review-author"><div class="review-avatar">—</div><div class="review-info"><div class="rn">[Name]</div><div class="rr">[Role, Fund]</div></div></div>
+      <div class="review-card reveal" style="transition-delay:.12s">
+        <p class="review-text">Poland has built real momentum in tech over recent years, and it's great to see an event designed to reflect that progress internationally.</p>
+        <div class="review-author"><div class="review-avatar"><img src="testimonials/merken_sunfish.jpeg" alt="Marcus Erken"></div><div class="review-info"><div class="rn">Marcus Erken</div><div class="rr">Partner, Sunfish Partners</div></div></div>
+      </div>
+      <div class="review-card reveal" style="transition-delay:.2s">
+        <p class="review-text">This is a format that's been missing in Poland: focused, well-curated, and built around real conversations. It's shaping up to be a very strong event.</p>
+        <div class="review-author"><div class="review-avatar"><img src="testimonials/mmalysz_inovo.jpeg" alt="Maciej Małysz"></div><div class="review-info"><div class="rn">Maciej Małysz</div><div class="rr">Partner, Inovo</div></div></div>
       </div>
     </div>
   </div>
@@ -375,7 +380,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <p class="sub-head">Focused pitches, hand-matched 1-on-1 meetings, and open networking throughout the&nbsp;day.</p>
     </div>
     <div class="timeline">
-      <div class="tl-item reveal"><div class="tl-time">12:00 – 13:00</div><div class="tl-body"><h3>Hard2beat Connect</h3><p>Exclusive LP session: fund update and portfolio&nbsp;review.</p><span class="tl-tag">LP Only</span></div></div>
+
       <div class="tl-item reveal" style="transition-delay:.04s"><div class="tl-time">13:00 – 13:15</div><div class="tl-body"><h3>Opening</h3><p>Welcome and the thesis behind THE MOAT.</p></div></div>
       <div class="tl-item reveal" style="transition-delay:.08s"><div class="tl-time">13:15 – 15:00</div><div class="tl-body"><h3>"Hard Questions" Pitch Contest</h3><p>Top 10 finalists pitch live, followed by expert-level questions on their technical&nbsp;moat.</p><span class="tl-tag main">Main Event</span></div></div>
       <div class="tl-item reveal" style="transition-delay:.1s"><div class="tl-time">15:00 – 16:30</div><div class="tl-body"><h3>Networking &amp; 1-on-1 Meetings</h3><p>First matchmaking block. Meet founders and investors in private, hand-picked&nbsp;sessions.</p><span class="tl-tag main">Matchmaking</span></div></div>
@@ -457,7 +462,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     <h2>See Poland's most defensible<br>technology <span class="hl">before it hits<br>the broader market.</span></h2>
     <p class="sub">Invitation-only for selected deep tech investors and founders.<br>Are you available to visit Warsaw on September&nbsp;23rd?</p>
     <div class="cta-btns">
-      <a href="mailto:hello@hard2beat.vc?subject=THE MOAT — RSVP" class="btn btn-accent">Request an Invitation →</a>
+      <a href="https://luma.com/fp73p6ge" target="_blank" class="btn btn-accent">Request an Invitation →</a>
       <a href="https://hard2beat.vc" target="_blank" class="btn btn-ghost">About Hard2beat</a>
     </div>
   </div>
