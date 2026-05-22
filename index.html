@@ -169,12 +169,22 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s ease}
 .reveal.visible{opacity:1;transform:translateY(0)}
 
+/* WHO WILL YOU MEET */
+.participants-section{padding:100px 0}
+.participants-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:28px;margin-top:56px}
+.participant-card{text-align:center}
+.participant-photo{width:100%;aspect-ratio:1/1;overflow:hidden;background:var(--bgc);margin-bottom:14px}
+.participant-photo img{width:100%;height:100%;object-fit:cover;object-position:center top;display:block;transition:transform .4s ease}
+.participant-card:hover .participant-photo img{transform:scale(1.04)}
+.participant-name{font-size:16px;font-weight:700;color:var(--t);margin-bottom:4px;line-height:1.3}
+.participant-org{font-size:12px;color:var(--ts);letter-spacing:.2px}
+
 @media(max-width:900px){
   .expect-top,.expect-bottom{grid-template-columns:1fr}
-  .reviews-grid{grid-template-columns:1fr}
   .about-points{grid-template-columns:1fr}
   .d-grid{grid-template-columns:1fr 1fr}
   .opp-facts{grid-template-columns:1fr 1fr}
+  .participants-grid{grid-template-columns:repeat(2,1fr)}
   .hero-meta{gap:24px}
   .gallery-grid{grid-template-columns:1fr 1fr}
   section{padding:80px 0}
@@ -237,10 +247,129 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     </div>
     <div class="hero-meta">
       <div class="meta-item"><div class="meta-label">When</div><div class="meta-value">23 September 2026</div></div>
-      <div class="meta-item"><div class="meta-label">Where</div><div class="meta-value">SEN, Warsaw</div></div>
+      <div class="meta-item"><div class="meta-label">Where</div><div class="meta-value">Cedet, Warsaw</div></div>
       <div class="meta-item"><div class="meta-label">Format</div><div class="meta-value">&lt;200 guests, invitation-only</div></div>
     </div>
     <div class="hero-cta"><a href="https://luma.com/fp73p6ge" target="_blank" class="btn btn-accent">Request an Invitation →</a></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- WHO WILL YOU MEET -->
+<section class="participants-section">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="label-sm">Who will you meet</div>
+      <h2>Investors attending <span class="hl">THE MOAT</span></h2>
+    </div>
+    <div class="participants-grid">
+      <div class="participant-card reveal">
+        <div class="participant-photo"><img src="participants/Tomasz Lepka.jpeg" alt="Tomasz Lepka"></div>
+        <div class="participant-name">Tomasz Lepka</div>
+        <div class="participant-org">Keen Venture Partners</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.04s">
+        <div class="participant-photo"><img src="participants/Daren Wilson.png" alt="Daren Wilson"></div>
+        <div class="participant-name">Daren Wilson</div>
+        <div class="participant-org">Healthseed</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.08s">
+        <div class="participant-photo"><img src="participants/Georgi Mitov.jpeg" alt="Georgi Mitov"></div>
+        <div class="participant-name">Georgi Mitov</div>
+        <div class="participant-org">BrightCap</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.12s">
+        <div class="participant-photo"><img src="participants/Daniel Oliver.jpeg" alt="Daniel Oliver"></div>
+        <div class="participant-name">Daniel Oliver</div>
+        <div class="participant-org">Capital Cell</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.04s">
+        <div class="participant-photo"><img src="participants/Tanya Aulachynskaya.jpeg" alt="Tanya Aulachynskaya"></div>
+        <div class="participant-name">Tanya Aulachynskaya</div>
+        <div class="participant-org">BADideas.fund</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.08s">
+        <div class="participant-photo"><img src="participants/Hugh Bowen.jpeg" alt="Hugh Bowen"></div>
+        <div class="participant-name">Hugh Bowen</div>
+        <div class="participant-org">SOSV</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.12s">
+        <div class="participant-photo"><img src="participants/Miha Pavlovic.jpeg" alt="Miha Pavlovic"></div>
+        <div class="participant-name">Miha Pavlovic</div>
+        <div class="participant-org">Project A</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.16s">
+        <div class="participant-photo"><img src="participants/Kate Kovalenko.jpeg" alt="Kate Kovalenko"></div>
+        <div class="participant-name">Kate Kovalenko</div>
+        <div class="participant-org">Momenta Ventures</div>
+      </div>
+      <div class="participant-card reveal">
+        <div class="participant-photo"><img src="participants/Fabian Janz.jpeg" alt="Fabian Janz"></div>
+        <div class="participant-name">Fabian Janz</div>
+        <div class="participant-org">Ignite Next</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.04s">
+        <div class="participant-photo"><img src="participants/Marek Gajewski.jpeg" alt="Marek Gajewski"></div>
+        <div class="participant-name">Marek Gajewski</div>
+        <div class="participant-org">Reem Ventures</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.08s">
+        <div class="participant-photo"><img src="participants/Stanislaw Knaflewski.jpeg" alt="Stanisław Knaflewski"></div>
+        <div class="participant-name">Stanisław Knaflewski</div>
+        <div class="participant-org">Altamira</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.12s">
+        <div class="participant-photo"><img src="participants/Marco Constantini.jpeg" alt="Marco Constantini"></div>
+        <div class="participant-name">Marco Constantini</div>
+        <div class="participant-org">Nova Capital</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.04s">
+        <div class="participant-photo"><img src="participants/Lorenzo Meneghini.jpeg" alt="Lorenzo Meneghini"></div>
+        <div class="participant-name">Lorenzo Meneghini</div>
+        <div class="participant-org">Nova Capital</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.08s">
+        <div class="participant-photo"><img src="participants/Aleksandra Byrka.jpeg" alt="Aleksandra Byrka"></div>
+        <div class="participant-name">Aleksandra Byrka</div>
+        <div class="participant-org">Blue Gravity Capital</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.12s">
+        <div class="participant-photo"><img src="participants/Imti Basharat.jpeg" alt="Imti Basharat"></div>
+        <div class="participant-name">Imti Basharat</div>
+        <div class="participant-org">Heartfelt</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.16s">
+        <div class="participant-photo"><img src="participants/Maria Portoles.jpeg" alt="Maria Portoles"></div>
+        <div class="participant-name">Maria Portoles</div>
+        <div class="participant-org">Vsquared Ventures</div>
+      </div>
+      <div class="participant-card reveal">
+        <div class="participant-photo"><img src="participants/Magdalena Marciniak.jpeg" alt="Magdalena Marciniak"></div>
+        <div class="participant-name">Magdalena Marciniak</div>
+        <div class="participant-org">i&amp;i Bio</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.04s">
+        <div class="participant-photo"><img src="participants/Michael Baczyk.jpeg" alt="Michael Baczyk"></div>
+        <div class="participant-name">Michael Baczyk</div>
+        <div class="participant-org">Heartcore Capital</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.08s">
+        <div class="participant-photo"><img src="participants/Adam Dvorak.jpeg" alt="Adam Dvorak"></div>
+        <div class="participant-name">Adam Dvorak</div>
+        <div class="participant-org">Presto Tech Horizons</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.12s">
+        <div class="participant-photo"><img src="participants/Radoslav Cuha.png" alt="Radoslav Cuha"></div>
+        <div class="participant-name">Radoslav Cuha</div>
+        <div class="participant-org">Portfolion</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.16s">
+        <div class="participant-photo"><img src="participants/Szymon Brodziak.jpeg" alt="Szymon Brodziak"></div>
+        <div class="participant-name">Szymon Brodziak</div>
+        <div class="participant-org">s16vc</div>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -317,35 +446,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <div class="e-card reveal" style="transition-delay:.16s">
         <div class="e-card-num">05</div>
         <h3>After Party</h3>
-        <p>An exclusive evening at SEN with Poland's top investment tier: leading VCs, institutional investors, and LPs. Informal, high-trust, among&nbsp;peers.</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- REVIEWS -->
-<section class="reviews">
-  <div class="container">
-    <div class="section-head reveal">
-      <div class="label-sm">What Investors Say</div>
-      <h2>Don't take our word for&nbsp;it.</h2>
-    </div>
-    <div class="reviews-grid">
-      <div class="review-card reveal">
-        <p class="review-text">Looks like a great setup to bring together the right founders and investors. We're looking forward to being there.</p>
-        <div class="review-author"><div class="review-avatar"><img src="testimonials/wwalniczek_balnord.jpeg" alt="Wojciech Walniczak"></div><div class="review-info"><div class="rn">Wojciech Walniczak</div><div class="rr">Partner, OTB Ventures</div></div></div>
-      </div>
-      <div class="review-card reveal" style="transition-delay:.08s">
-        <p class="review-text">Poland's deep tech ecosystem is growing fast, and this is a great moment to showcase it. The event feels like the right platform to do that.</p>
-        <div class="review-author"><div class="review-avatar"><img src="testimonials/wdrewczynski_balnord.jpeg" alt="Wojciech Drewczyński"></div><div class="review-info"><div class="rn">Wojciech Drewczyński</div><div class="rr">Partner, Balnord</div></div></div>
-      </div>
-      <div class="review-card reveal" style="transition-delay:.12s">
-        <p class="review-text">Poland has built real momentum in tech over recent years, and it's great to see an event designed to reflect that progress internationally.</p>
-        <div class="review-author"><div class="review-avatar"><img src="testimonials/merken_sunfish.jpeg" alt="Marcus Erken"></div><div class="review-info"><div class="rn">Marcus Erken</div><div class="rr">Partner, Sunfish Partners</div></div></div>
-      </div>
-      <div class="review-card reveal" style="transition-delay:.2s">
-        <p class="review-text">This is a format that's been missing in Poland: focused, well-curated, and built around real conversations. It's shaping up to be a very strong event.</p>
-        <div class="review-author"><div class="review-avatar"><img src="testimonials/mmalysz_inovo.jpeg" alt="Maciej Małysz"></div><div class="review-info"><div class="rn">Maciej Małysz</div><div class="rr">Partner, Inovo</div></div></div>
+        <p>An exclusive evening at Cedet with Poland's top investment tier: leading VCs, institutional investors, and LPs. Informal, high-trust, among&nbsp;peers.</p>
       </div>
     </div>
   </div>
@@ -397,24 +498,23 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
   <div class="container">
     <div class="section-head reveal" style="margin-bottom:0">
       <div class="label-sm">Venue</div>
-      <h2>SEN, <span class="hl">Warsaw</span></h2>
+      <h2>Centralny Dom Technologii, <span class="hl">Warsaw</span></h2>
     </div>
     <div class="venue-inner">
       <div class="reveal">
-        <div class="venue-address">SEN Events</div>
-        <div class="venue-street">ul. Wioślarska 6, Warsaw</div>
-        <p class="venue-desc">A riverside event space on the Vistula with modern conference facilities, a rooftop terrace, and a private bar. Steps from the city centre.</p>
+        <div class="venue-address">Centralny Dom Technologii</div>
+        <div class="venue-street">ul. Krucza 50, budynek Cedet, 1 piętro, 00-025 Warszawa</div>
+        <p class="venue-desc">The Central House of Technology is located in the Cedet building, one of Warsaw's architectural landmarks, with a rich history dating back to the 1940s. Home to PFR headquarters and steps from the heart of the city.</p>
         <div class="venue-links">
-          <a href="https://maps.app.goo.gl/GToXiYZB2UXcjwSNA" target="_blank" class="btn btn-ghost" style="font-size:12px;padding:10px 22px">View on Google Maps →</a>
-          <a href="https://senwarsaw.pl/" target="_blank" class="btn btn-ghost" style="font-size:12px;padding:10px 22px">senwarsaw.pl →</a>
+          <a href="https://maps.app.goo.gl/search?q=ul.+Krucza+50+Warsaw" target="_blank" class="btn btn-ghost" style="font-size:12px;padding:10px 22px">View on Google Maps →</a>
         </div>
-        <iframe class="venue-map" src="https://maps.google.com/maps?q=Wio%C5%9Blarska+6+Warsaw&output=embed&z=15" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
+        <iframe class="venue-map" src="https://maps.google.com/maps?q=Krucza+50+Warsaw&output=embed&z=15" loading="lazy" referrerpolicy="no-referrer-when-downgrade" frameborder="0" allowfullscreen></iframe>
       </div>
       <div class="venue-photos reveal" style="transition-delay:.1s">
-        <div class="venue-photo"><img src="sen-events/sen_1.jpg" alt="SEN — conference room"></div>
-        <div class="venue-photo"><img src="sen-events/sen_2.jpg" alt="SEN — rooftop terrace"></div>
-        <div class="venue-photo"><img src="sen-events/sen_3.jpg" alt="SEN — lounge"></div>
-        <div class="venue-photo"><img src="sen-events/sen_4.jpg" alt="SEN — bar"></div>
+        <div class="venue-photo"><img src="cdt/cdt1.jpeg" alt="CDT — entrance"></div>
+        <div class="venue-photo"><img src="cdt/cdt2.jpeg" alt="CDT — interior"></div>
+        <div class="venue-photo"><img src="cdt/cdt3.jpg" alt="CDT — space"></div>
+        <div class="venue-photo"><img src="cdt/cdt4.jpeg" alt="CDT — hall"></div>
       </div>
     </div>
   </div>
@@ -451,7 +551,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <div><div class="d-label">Format</div><div class="d-val">Invitation-Only</div></div>
       <div><div class="d-label">Guests</div><div class="d-val">&lt;200 guests, invitation-only</div></div>
       <div><div class="d-label">Who</div><div class="d-val">Investors &amp; Deep Tech Founders</div></div>
-      <div><div class="d-label">Venue</div><div class="d-val">SEN, Warsaw</div></div>
+      <div><div class="d-label">Venue</div><div class="d-val">Cedet, Warsaw</div></div>
     </div>
   </div>
 </div>
