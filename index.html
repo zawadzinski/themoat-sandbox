@@ -41,7 +41,7 @@ section{padding:100px 0;position:relative}
 .nav-cta:hover{border-color:var(--al);color:var(--al);box-shadow:0 0 20px var(--ag)}
 
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 0 60px;position:relative;overflow:hidden}
+.hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 0 20px;position:relative;overflow:hidden}
 .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 70% 50% at 50% 0%,rgba(43,57,120,.12) 0%,transparent 70%),radial-gradient(ellipse 50% 40% at 70% 90%,rgba(111,0,128,.08) 0%,transparent 60%),radial-gradient(ellipse 40% 30% at 20% 70%,rgba(43,57,120,.06) 0%,transparent 50%);pointer-events:none}
 .hero-skyline{position:absolute;bottom:0;left:0;right:0;height:200px;pointer-events:none;opacity:.05}
 .hero-skyline svg{width:100%;height:100%;display:block}
@@ -149,6 +149,14 @@ section{padding:100px 0;position:relative}
 .d-label{font-size:12px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:var(--tm);margin-bottom:6px}
 .d-val{font-size:16px;font-weight:700}
 
+/* PARTNERS */
+.partners{margin-top:36px;text-align:center;animation:fadeUp .8s ease-out .85s both}
+.partners-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--tm);margin-bottom:12px}
+.partners-logos{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap}
+.partner-logo{opacity:1;transition:opacity .3s ease;filter:brightness(0) invert(1)}
+.partner-logo:hover{opacity:.85}
+.partner-logo img,.partner-logo svg{height:56px;width:auto;display:block}
+
 /* CTA */
 .cta{padding:140px 0;text-align:center;position:relative}
 .cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 50% 50% at 50% 70%,rgba(111,0,128,.07) 0%,transparent 70%),radial-gradient(ellipse 40% 40% at 40% 60%,rgba(43,57,120,.06) 0%,transparent 60%);pointer-events:none}
@@ -251,6 +259,14 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <div class="meta-item"><div class="meta-label">Format</div><div class="meta-value">&lt;200 guests, invitation-only</div></div>
     </div>
     <div class="hero-cta"><a href="https://luma.com/fp73p6ge" target="_blank" class="btn btn-accent">Request an Invitation →</a></div>
+    <div class="partners">
+      <div class="partners-label">Partners</div>
+      <div class="partners-logos">
+        <a href="https://pfrventures.pl" target="_blank" class="partner-logo">
+          <img src="assets/pfrvlogo.svg" alt="PFR Ventures">
+        </a>
+      </div>
+    </div>
   </div>
 </section>
 
