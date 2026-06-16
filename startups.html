@@ -97,6 +97,8 @@ section{padding:100px 0;position:relative}
 .apply-btn--bootcamp:hover{box-shadow:0 4px 32px var(--ag),0 0 64px rgba(43,57,120,.15);transform:translateY(-1px)}
 .tl-link{display:inline-block;margin-top:8px;font-size:13px;font-weight:600;color:var(--al);text-decoration:none}
 .tl-link:hover{color:var(--t)}
+.apply-note{margin-top:18px;font-size:13px;color:var(--ts);letter-spacing:.2px}
+.cta-short{display:none}
 
 /* OPPORTUNITY */
 .opp{padding:110px 0}
@@ -226,6 +228,9 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
   .tl-item{grid-template-columns:1fr;gap:6px}
   .foot-inner{justify-content:center;text-align:center}
   .gallery-grid{grid-template-columns:1fr}
+  .cta-full{display:none}
+  .cta-short{display:inline}
+  .nav-badge{display:none}
 }
 </style>
 </head>
@@ -249,7 +254,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <a href="#why">Why THE MOAT</a>
     </div>
     <div class="nav-right">
-      <a href="https://airtable.com/appK6wj0IVPl8m1ae/pag3ZY6qnqzRivgGa/form" target="_blank" class="nav-cta nav-cta--apply">Apply by 31 Aug 2026</a>
+      <a href="https://airtable.com/appK6wj0IVPl8m1ae/pag3ZY6qnqzRivgGa/form" target="_blank" class="nav-cta nav-cta--apply"><span class="cta-full">Apply by 31 Aug 2026</span><span class="cta-short">Apply</span></a>
     </div>
   </div>
 </nav>
@@ -294,6 +299,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
           <span class="apply-action">Apply by 31 August →</span>
         </a>
       </div>
+      <p class="apply-note">No fee to apply or take part. Places are limited and selected on merit.</p>
     </div>
     <div class="partners">
       <div class="partners-label">Partners</div>
@@ -508,7 +514,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
   <div class="container">
     <div class="d-grid reveal">
       <div><div class="d-label">Who</div><div class="d-val">Deep Tech Founders</div></div>
-      <div><div class="d-label">Selected</div><div class="d-val">30 Startups · 10 Pitch</div></div>
+      <div><div class="d-label">Cost</div><div class="d-val">Free</div></div>
       <div><div class="d-label">Apply by</div><div class="d-val">31 August 2026</div></div>
       <div><div class="d-label">Event</div><div class="d-val">23 Sept · Cedet, Warsaw</div></div>
     </div>
@@ -530,6 +536,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
         <span class="apply-action">Apply by 31 August →</span>
       </a>
     </div>
+    <p class="apply-note">No fee to apply or take part. Places are limited and selected on merit.</p>
   </div>
 </section>
 
