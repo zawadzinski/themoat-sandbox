@@ -54,10 +54,14 @@ section{padding:100px 0;position:relative}
 .nav-links{display:flex;align-items:center;gap:24px}
 .nav-links a{font-size:12px;font-weight:500;letter-spacing:.5px;color:var(--ts);text-decoration:none;transition:color .3s}
 .nav-links a:hover{color:var(--t)}
+.nav-link-alt{color:var(--al)!important;font-weight:700!important}
+.nav-link-alt:hover{color:var(--t)!important}
 .nav-right{display:flex;align-items:center;gap:20px}
 .nav-date{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tm)}
 .nav-cta{padding:8px 20px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:var(--t);border:1px solid var(--bl);transition:all .3s ease}
 .nav-cta:hover{border-color:var(--al);color:var(--al);box-shadow:0 0 20px var(--ag)}
+.nav-cta--alt{background:linear-gradient(135deg,var(--g1),var(--g2));border-color:transparent;color:#fff}
+.nav-cta--alt:hover{color:#fff;border-color:transparent;box-shadow:0 0 24px var(--ag)}
 
 /* HERO */
 .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;padding:120px 0 20px;position:relative;overflow:hidden}
@@ -78,6 +82,15 @@ section{padding:100px 0;position:relative}
 .meta-label{font-size:12px;font-weight:600;letter-spacing:2.5px;text-transform:uppercase;color:var(--tm);margin-bottom:4px}
 .meta-value{font-size:15px;font-weight:600;color:var(--t)}
 .hero-cta{animation:fadeUp .8s ease-out .7s both}
+.hero-audience{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;animation:fadeUp .8s ease-out .7s both}
+.aud-btn{display:flex;flex-direction:column;gap:4px;align-items:flex-start;padding:15px 30px;min-width:236px;text-decoration:none;border:1px solid var(--bl);transition:all .3s ease}
+.aud-label{font-size:11px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--tm)}
+.aud-action{font-size:15px;font-weight:700;color:var(--t)}
+.aud-btn--investors:hover{border-color:var(--al);transform:translateY(-1px)}
+.aud-btn--startups{background:linear-gradient(135deg,var(--g1),var(--g2));border-color:transparent}
+.aud-btn--startups .aud-label{color:rgba(255,255,255,.78)}
+.aud-btn--startups .aud-action{color:#fff}
+.aud-btn--startups:hover{box-shadow:0 4px 32px var(--ag),0 0 64px rgba(43,57,120,.15);transform:translateY(-1px)}
 
 /* OPPORTUNITY */
 .opp{padding:110px 0}
@@ -244,7 +257,8 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     </div>
     <div class="nav-right">
       <span class="nav-date">23 Sept 2026</span>
-      <a href="https://luma.com/fp73p6ge" target="_blank" class="nav-cta">Request Invite</a>
+      <a href="https://luma.com/fp73p6ge" target="_blank" class="nav-cta">For Investors</a>
+      <a href="startups.html" class="nav-cta nav-cta--alt">For Startups</a>
     </div>
   </div>
 </nav>
@@ -277,7 +291,16 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <div class="meta-item"><div class="meta-label">Where</div><div class="meta-value">Cedet, Warsaw</div></div>
       <div class="meta-item"><div class="meta-label">Format</div><div class="meta-value">&lt;200 guests, invitation-only</div></div>
     </div>
-    <div class="hero-cta"><a href="https://luma.com/fp73p6ge" target="_blank" class="btn btn-accent">Request an Invitation →</a></div>
+    <div class="hero-audience">
+      <a href="https://luma.com/fp73p6ge" target="_blank" class="aud-btn aud-btn--investors">
+        <span class="aud-label">For Investors</span>
+        <span class="aud-action">Request an invitation →</span>
+      </a>
+      <a href="startups.html" class="aud-btn aud-btn--startups">
+        <span class="aud-label">For Startups</span>
+        <span class="aud-action">Apply to pitch →</span>
+      </a>
+    </div>
     <div class="partners">
       <div class="partners-label">Partners</div>
       <div class="partners-logos">
@@ -292,7 +315,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
 <div class="divider"></div>
 
 <!-- WHO WILL YOU MEET -->
-<section class="participants-section">
+<section class="participants-section" id="who-you-meet">
   <div class="container">
     <div class="section-head reveal">
       <div class="label-sm">Who will you meet</div>
@@ -650,6 +673,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     <div class="foot-inner">
       <div class="foot-brand">Hard2beat © 2026</div>
       <div class="foot-links">
+        <a href="startups.html">For Startups</a>
         <a href="https://hard2beat.vc" target="_blank">hard2beat.vc</a>
         <a href="https://www.linkedin.com/company/hard2beat" target="_blank">LinkedIn</a>
         <a href="https://hard2beat.vc/contact-us/#form" target="_blank">Contact</a>
