@@ -27,8 +27,9 @@
 <style>
 :root{--g1:#2B3978;--g2:#6F0080;--bg:#0c0c14;--bg2:#10101c;--bgc:#14142a;--bgch:#191938;--t:#eeedf2;--ts:#9b99a8;--tm:#8a8898;--al:#9b30b0;--ag:rgba(111,0,128,.25);--bd:#252540;--bl:#333358;--f:'Inter',system-ui,-apple-system,sans-serif}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth;overflow-x:hidden}
-body{font-family:var(--f);background:var(--bg);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased}
+html{overflow-x:hidden;height:100%}
+body{font-family:var(--f);background:var(--bg);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased;height:100%;display:flex;flex-direction:column;overflow:hidden}
+.scroll-area{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;overflow-x:hidden}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
 .container{max-width:1080px;margin:0 auto;padding:0 32px}
 section{padding:100px 0;position:relative}
@@ -48,7 +49,7 @@ section{padding:100px 0;position:relative}
 .btn-ghost:hover{border-color:var(--al);color:var(--al)}
 
 /* NAV */
-.nav{position:sticky;top:0;left:0;right:0;z-index:100;padding:0;background:#101019;border-bottom:1px solid rgba(37,37,64,.5)}
+.nav{flex:0 0 auto;z-index:100;padding:0;background:#101019;border-bottom:1px solid rgba(37,37,64,.5)}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;height:60px}
 .nav-logo svg{height:18px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:24px}
@@ -264,6 +265,8 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     </div>
   </div>
 </nav>
+
+<div class="scroll-area">
 
 <!-- HERO -->
 <section class="hero">
@@ -704,6 +707,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     </div>
   </div>
 </footer>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
