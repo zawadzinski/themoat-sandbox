@@ -48,7 +48,7 @@ section{padding:100px 0;position:relative}
 .btn-ghost:hover{border-color:var(--al);color:var(--al)}
 
 /* NAV — "For Startups" variant: accent top bar + page badge */
-.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0;background:rgba(14,9,22,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(155,48,176,.28)}
+.nav{position:sticky;top:0;left:0;right:0;z-index:100;padding:0;background:rgba(14,9,22,.9);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(155,48,176,.28)}
 .nav::before{content:'';position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--g1),var(--g2) 55%,var(--al))}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;height:60px;gap:28px}
 .nav-brand{display:flex;align-items:center;gap:12px}
@@ -58,6 +58,7 @@ section{padding:100px 0;position:relative}
 .nav-links a{font-size:12px;font-weight:500;letter-spacing:.5px;color:var(--ts);text-decoration:none;transition:color .3s;white-space:nowrap}
 .nav-links a:hover{color:var(--t)}
 .nav-link-home{color:var(--tm)}
+.nav-link-home--mobile{display:none;font-size:12px;font-weight:500;letter-spacing:.5px;text-decoration:none;white-space:nowrap}
 .nav-right{display:flex;align-items:center;gap:20px}
 .nav-date{font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--tm);white-space:nowrap}
 .nav-cta{padding:8px 20px;font-size:12px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;text-decoration:none;color:var(--t);border:1px solid var(--bl);transition:all .3s ease;white-space:nowrap}
@@ -223,6 +224,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
   section{padding:80px 0}
   .nav-links{display:none}
   .nav-date{display:none}
+  .nav-link-home--mobile{display:inline}
 }
 @media(max-width:600px){
   .container{padding:0 20px}
@@ -249,6 +251,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       </a>
       <span class="nav-badge">For Startups</span>
     </div>
+    <a href="index.html" class="nav-link-home nav-link-home--mobile">← Event Home</a>
     <div class="nav-links">
       <a href="index.html" class="nav-link-home">← Event Home</a>
       <a href="#benefits">What You Get</a>
