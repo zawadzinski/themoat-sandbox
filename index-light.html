@@ -25,11 +25,10 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
-:root{--g1:#2B3978;--g2:#6F0080;--bg:#0c0c14;--bg2:#10101c;--bgc:#14142a;--bgch:#191938;--t:#eeedf2;--ts:#9b99a8;--tm:#8a8898;--al:#9b30b0;--ag:rgba(111,0,128,.25);--bd:#252540;--bl:#333358;--f:'Inter',system-ui,-apple-system,sans-serif}
+:root{--g1:#2B3978;--g2:#6F0080;--bg:#ffffff;--bg2:#f4f4f9;--bgc:#f7f7fc;--bgch:#eeeef6;--t:#16161f;--ts:#55555f;--tm:#6a6a78;--al:#7d1a92;--ag:rgba(111,0,128,.18);--bd:#e3e3ec;--bl:#d2d2de;--f:'Inter',system-ui,-apple-system,sans-serif}
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
-html{overflow-x:hidden;height:100%}
-body{font-family:var(--f);background:var(--bg);color:var(--t);line-height:1.6;-webkit-font-smoothing:antialiased;height:100%;display:flex;flex-direction:column;overflow:hidden}
-.scroll-area{flex:1 1 auto;overflow-y:auto;-webkit-overflow-scrolling:touch;scroll-behavior:smooth;overflow-x:hidden}
+html{scroll-behavior:smooth}
+body{font-family:var(--f);background:var(--bg);color:var(--t);line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
 body::after{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.025'/%3E%3C/svg%3E");pointer-events:none;z-index:9999}
 .container{max-width:1080px;margin:0 auto;padding:0 32px}
 section{padding:100px 0;position:relative}
@@ -49,7 +48,7 @@ section{padding:100px 0;position:relative}
 .btn-ghost:hover{border-color:var(--al);color:var(--al)}
 
 /* NAV */
-.nav{flex:0 0 auto;z-index:100;padding:0;background:#101019;border-bottom:1px solid rgba(37,37,64,.5)}
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0;background:rgba(255,255,255,.85);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:1px solid rgba(0,0,0,.08)}
 .nav-inner{display:flex;justify-content:space-between;align-items:center;height:60px}
 .nav-logo svg{height:18px;width:auto;display:block}
 .nav-links{display:flex;align-items:center;gap:24px}
@@ -74,7 +73,6 @@ section{padding:100px 0;position:relative}
 .hero-eyebrow .dot{width:6px;height:6px;background:var(--al);border-radius:50%;animation:pulse 2s ease-in-out infinite}
 .hero-event-name{font-size:13px;font-weight:700;letter-spacing:5px;text-transform:uppercase;color:var(--tm);margin-bottom:20px;animation:fadeUp .8s ease-out .15s both}
 .hero-title{font-size:clamp(56px,9vw,110px);font-weight:900;line-height:.95;letter-spacing:-3px;text-transform:uppercase;margin-bottom:28px;animation:fadeUp .8s ease-out .3s both;background:linear-gradient(135deg,var(--t) 40%,var(--al) 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
-.hero-logo{display:block;width:min(440px,68%);height:auto;margin:0 auto 32px;animation:fadeUp .8s ease-out .3s both}
 .hero-tagline{font-size:clamp(17px,2.4vw,24px);font-weight:600;color:var(--t);max-width:640px;margin:0 auto 16px;line-height:1.4;animation:fadeUp .8s ease-out .42s both}
 .hero-pillars{display:flex;justify-content:center;gap:28px;flex-wrap:wrap;margin:32px auto 44px;animation:fadeUp .8s ease-out .52s both}
 .pillar{display:flex;align-items:center;gap:8px;font-size:14px;font-weight:500;color:var(--ts)}
@@ -162,7 +160,7 @@ section{padding:100px 0;position:relative}
 .venue-desc{font-size:14px;color:var(--ts);line-height:1.7;margin-bottom:28px}
 .venue-links{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
 .venue-links a{align-self:flex-start}
-.venue-map{width:100%;height:220px;border:1px solid var(--bd);filter:grayscale(1) invert(1) brightness(.8);margin-top:4px}
+.venue-map{width:100%;height:220px;border:1px solid var(--bd);filter:grayscale(.4);margin-top:4px}
 .venue-photos{display:grid;grid-template-columns:1fr 1fr;gap:4px}
 .venue-photo{height:190px;overflow:hidden}
 .venue-photo img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .4s ease}
@@ -187,7 +185,7 @@ section{padding:100px 0;position:relative}
 .partners{margin-top:36px;text-align:center;animation:fadeUp .8s ease-out .85s both}
 .partners-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--tm);margin-bottom:12px}
 .partners-logos{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap}
-.partner-logo{opacity:1;transition:opacity .3s ease;filter:brightness(0) invert(1)}
+.partner-logo{opacity:1;transition:opacity .3s ease;filter:brightness(0)}
 .partner-logo:hover{opacity:.85}
 .partner-logo img,.partner-logo svg{height:56px;width:auto;display:block}
 
@@ -239,8 +237,6 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
   .tl-item{grid-template-columns:1fr;gap:6px}
   .foot-inner{justify-content:center;text-align:center}
   .gallery-grid{grid-template-columns:1fr}
-  .nav-cta{padding:8px 12px;font-size:11px;letter-spacing:1px;white-space:nowrap}
-  .nav-right{gap:8px}
 }
 </style>
 </head>
@@ -251,7 +247,7 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
   <div class="container nav-inner">
     <a href="#" class="nav-logo">
       <!-- Logo — viewBox cropped to wordmark bounds for proper sizing -->
-      <svg viewBox="140 430 1640 230" xmlns="http://www.w3.org/2000/svg" style="height:18px;width:auto;display:block"><g fill="#eeedf2"><polygon points="1599.3,443.4 1599.3,490.1 1653.2,490.1 1653.2,639.1 1706.1,639.1 1706.1,490.1 1760,490.1 1760,443.4"/><path d="M1481.9,443.4l-68.5,195.6h55.6l9.5-29.3h75.5l9.5,29.3h55.6l-68.5-195.6H1481.9z M1490.9,570.9l24-74.3h2.8l24,74.3H1490.9z"/><polygon points="1318,561.4 1395.7,561.4 1395.7,520.3 1318,520.3 1318,489.3 1404.1,489.3 1404.1,443.4 1265.2,443.4 1265.2,639.1 1406.9,639.1 1406.9,593.2 1318,593.2"/><path d="M1206.9,531.5c17.3-5.9,27.4-16.2,27.4-38.3c0-30.5-21.2-49.7-66.5-49.7h-83v195.6h87.8c53.9,0,75.7-27.1,75.7-58.1C1248.3,558.3,1237.4,539.9,1206.9,531.5z M1137.6,487.6h28.5c5.3,0,15.1,2.8,15.1,16.2c0,14-9.8,17.3-15.1,17.3h-28.5V487.6z M1170.6,594.6h-33v-41.4h33c19,0,22.9,11.2,22.9,21.5C1193.5,584,1189.6,594.6,1170.6,594.6z"/><path d="M1010.3,567c20.1-10.6,53.1-26.3,53.1-67.4c0-34.9-23.8-58.7-71-58.7c-53.1,0-71.6,30.5-71.6,64.8v6.1h50V508c0-18.7,10.9-23.5,20.7-23.5c6.7,0,21,0.8,20.1,18.4c-0.6,19.6-19.6,25.7-44.2,39.4c-42.2,24-49.5,50.6-49.5,86.6v10.1h143.7v-42.5h-84.1v-0.3C977.6,589.6,983.8,582.1,1010.3,567z"/><path d="M814.1,443.4h-80.5v195.6h80.5c60.4,0,92.5-34.9,92.5-97.8C906.6,478.4,874.5,443.4,814.1,443.4z M808.5,593.2h-22.1v-104h22.1c34.4,0,43.9,14.3,43.9,52C852.4,578.7,842.9,593.2,808.5,593.2z"/><path d="M714.7,511.6c0-38.9-22.6-68.2-78.3-68.2h-83.6v195.6h52.8v-59.3h26l32.7,59.3h52.3l-38-66C704.4,561.7,714.7,538.2,714.7,511.6z M634.8,534h-29.1v-44.7h29.1c18.2,0,25.2,9.8,25.2,22.4C659.9,524.2,652.9,534,634.8,534z"/><path d="M405.4,443.4l-68.5,195.6h55.6l9.5-29.3h75.5l9.5,29.3h55.6l-68.5-195.6H405.4z M414.4,570.9l24-74.3h2.8l24,74.3H414.4z"/><polygon points="274,518.3 212.8,518.3 212.8,443.4 160,443.4 160,639.1 212.8,639.1 212.8,562.2 274,562.2 274,639.1 326.9,639.1 326.9,443.4 274,443.4"/></g></svg>
+      <svg viewBox="140 430 1640 230" xmlns="http://www.w3.org/2000/svg" style="height:18px;width:auto;display:block"><g fill="#16161f"><polygon points="1599.3,443.4 1599.3,490.1 1653.2,490.1 1653.2,639.1 1706.1,639.1 1706.1,490.1 1760,490.1 1760,443.4"/><path d="M1481.9,443.4l-68.5,195.6h55.6l9.5-29.3h75.5l9.5,29.3h55.6l-68.5-195.6H1481.9z M1490.9,570.9l24-74.3h2.8l24,74.3H1490.9z"/><polygon points="1318,561.4 1395.7,561.4 1395.7,520.3 1318,520.3 1318,489.3 1404.1,489.3 1404.1,443.4 1265.2,443.4 1265.2,639.1 1406.9,639.1 1406.9,593.2 1318,593.2"/><path d="M1206.9,531.5c17.3-5.9,27.4-16.2,27.4-38.3c0-30.5-21.2-49.7-66.5-49.7h-83v195.6h87.8c53.9,0,75.7-27.1,75.7-58.1C1248.3,558.3,1237.4,539.9,1206.9,531.5z M1137.6,487.6h28.5c5.3,0,15.1,2.8,15.1,16.2c0,14-9.8,17.3-15.1,17.3h-28.5V487.6z M1170.6,594.6h-33v-41.4h33c19,0,22.9,11.2,22.9,21.5C1193.5,584,1189.6,594.6,1170.6,594.6z"/><path d="M1010.3,567c20.1-10.6,53.1-26.3,53.1-67.4c0-34.9-23.8-58.7-71-58.7c-53.1,0-71.6,30.5-71.6,64.8v6.1h50V508c0-18.7,10.9-23.5,20.7-23.5c6.7,0,21,0.8,20.1,18.4c-0.6,19.6-19.6,25.7-44.2,39.4c-42.2,24-49.5,50.6-49.5,86.6v10.1h143.7v-42.5h-84.1v-0.3C977.6,589.6,983.8,582.1,1010.3,567z"/><path d="M814.1,443.4h-80.5v195.6h80.5c60.4,0,92.5-34.9,92.5-97.8C906.6,478.4,874.5,443.4,814.1,443.4z M808.5,593.2h-22.1v-104h22.1c34.4,0,43.9,14.3,43.9,52C852.4,578.7,842.9,593.2,808.5,593.2z"/><path d="M714.7,511.6c0-38.9-22.6-68.2-78.3-68.2h-83.6v195.6h52.8v-59.3h26l32.7,59.3h52.3l-38-66C704.4,561.7,714.7,538.2,714.7,511.6z M634.8,534h-29.1v-44.7h29.1c18.2,0,25.2,9.8,25.2,22.4C659.9,524.2,652.9,534,634.8,534z"/><path d="M405.4,443.4l-68.5,195.6h55.6l9.5-29.3h75.5l9.5,29.3h55.6l-68.5-195.6H405.4z M414.4,570.9l24-74.3h2.8l24,74.3H414.4z"/><polygon points="274,518.3 212.8,518.3 212.8,443.4 160,443.4 160,639.1 212.8,639.1 212.8,562.2 274,562.2 274,639.1 326.9,639.1 326.9,443.4 274,443.4"/></g></svg>
     </a>
     <div class="nav-links">
       <a href="#program">What to Expect</a>
@@ -267,12 +263,10 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
   </div>
 </nav>
 
-<div class="scroll-area">
-
 <!-- HERO -->
 <section class="hero">
   <div class="hero-skyline">
-    <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><g fill="#eeedf2">
+    <svg viewBox="0 0 1440 200" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><g fill="#16161f">
       <rect x="0" y="170" width="1440" height="30"/>
       <rect x="60" y="130" width="28" height="70"/><rect x="93" y="110" width="24" height="90"/><rect x="122" y="140" width="32" height="60"/><rect x="165" y="120" width="18" height="80"/><rect x="188" y="100" width="26" height="100"/><rect x="220" y="135" width="20" height="65"/>
       <rect x="330" y="145" width="38" height="55"/><rect x="340" y="90" width="18" height="110"/><rect x="346" y="50" width="8" height="150"/><rect x="348" y="30" width="4" height="170"/>
@@ -284,8 +278,8 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
   </div>
   <div class="container">
     <div class="hero-eyebrow"><span class="dot"></span>Invitation Only · Warsaw, Poland</div>
-    <img src="assets/the-moat-logo.svg" alt="Hard2beat presents THE MOAT" class="hero-logo">
-    <h1 class="hero-title" style="position:absolute;left:-9999px;top:-9999px">THE MOAT</h1>
+    <div class="hero-event-name">Hard2beat presents</div>
+    <h1 class="hero-title">THE MOAT</h1>
     <p class="hero-tagline">All you need to know about deep tech in Poland.<br>In one&nbsp;day.</p>
     <div class="hero-pillars">
       <span class="pillar"><span class="pd"></span>High-impact networking</span>
@@ -328,70 +322,49 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
       <h2>Investors attending <span class="hl">THE MOAT</span></h2>
     </div>
     <div class="participants-grid">
-      <!-- Row 1: 1 Polish, 3 intl — order 1 -->
+      <!-- Row 1: 2 Polish, 2 intl -->
       <div class="participant-card reveal">
         <div class="participant-photo"><img src="participants/Tomasz Lepka.jpeg" alt="Tomasz Lepka"></div>
         <div class="participant-name">Tomasz Lepka</div>
         <div class="participant-org">Keen Venture Partners</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.04s">
-        <div class="participant-photo"><img src="participants/Dan Lupu.jpeg" alt="Dan Lupu"></div>
-        <div class="participant-name">Dan Lupu</div>
-        <div class="participant-org">Earlybird</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.08s">
-        <div class="participant-photo"><img src="participants/Tanya Aulachynskaya.jpeg" alt="Tanya Aulachynskaya"></div>
-        <div class="participant-name">Tanya Aulachynskaya</div>
-        <div class="participant-org">BADideas.fund</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.12s">
-        <div class="participant-photo"><img src="participants/Oliver Heimes.jpeg" alt="Oliver Heimes"></div>
-        <div class="participant-name">Oliver Heimes</div>
-        <div class="participant-org">Lakestar</div>
-      </div>
-      <!-- Row 2: 1 Polish, 3 intl — order 1 -->
-      <div class="participant-card reveal">
         <div class="participant-photo"><img src="participants/Daren Wilson.png" alt="Daren Wilson"></div>
         <div class="participant-name">Daren Wilson</div>
         <div class="participant-org">Healthseed</div>
       </div>
-      <div class="participant-card reveal" style="transition-delay:.04s">
+      <div class="participant-card reveal" style="transition-delay:.08s">
+        <div class="participant-photo"><img src="participants/Georgi Mitov.jpeg" alt="Georgi Mitov"></div>
+        <div class="participant-name">Georgi Mitov</div>
+        <div class="participant-org">BrightCap</div>
+      </div>
+      <div class="participant-card reveal" style="transition-delay:.12s">
         <div class="participant-photo"><img src="participants/Wojciech Walniczek.jpeg" alt="Wojciech Walniczek"></div>
         <div class="participant-name">Wojciech Walniczek</div>
         <div class="participant-org">OTB Ventures</div>
       </div>
-      <div class="participant-card reveal" style="transition-delay:.08s">
-        <div class="participant-photo"><img src="participants/Kate Kovalenko.jpeg" alt="Kate Kovalenko"></div>
-        <div class="participant-name">Kate Kovalenko</div>
-        <div class="participant-org">Momenta Ventures</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.12s">
-        <div class="participant-photo"><img src="participants/Nicholas Nelson.jpeg" alt="Nicholas Nelson"></div>
-        <div class="participant-name">Nicholas Nelson</div>
-        <div class="participant-org">Archangel</div>
-      </div>
-      <!-- Row 3: 1 Polish, 3 intl — order 1 -->
+      <!-- Row 2: 1 Polish, 3 intl -->
       <div class="participant-card reveal">
         <div class="participant-photo"><img src="participants/Daniel Oliver.jpeg" alt="Daniel Oliver"></div>
         <div class="participant-name">Daniel Oliver</div>
         <div class="participant-org">Capital Cell</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.04s">
-        <div class="participant-photo"><img src="participants/Vojtech Tomsu.png" alt="Vojtech Tomsu"></div>
-        <div class="participant-name">Vojtech Tomsu</div>
-        <div class="participant-org">Kaya VC</div>
+        <div class="participant-photo"><img src="participants/Tanya Aulachynskaya.jpeg" alt="Tanya Aulachynskaya"></div>
+        <div class="participant-name">Tanya Aulachynskaya</div>
+        <div class="participant-org">BADideas.fund</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.08s">
-        <div class="participant-photo"><img src="participants/Wojciech Drewczynski.jpeg" alt="Wojciech Drewczyński"></div>
-        <div class="participant-name">Wojciech Drewczyński</div>
-        <div class="participant-org">Balnord</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.12s">
         <div class="participant-photo"><img src="participants/Hugh Bowen.jpeg" alt="Hugh Bowen"></div>
         <div class="participant-name">Hugh Bowen</div>
         <div class="participant-org">SOSV</div>
       </div>
-      <!-- Row 4: 1 Polish, 3 intl — order 1 -->
+      <div class="participant-card reveal" style="transition-delay:.12s">
+        <div class="participant-photo"><img src="participants/Wojciech Drewczynski.jpeg" alt="Wojciech Drewczyński"></div>
+        <div class="participant-name">Wojciech Drewczyński</div>
+        <div class="participant-org">Balnord</div>
+      </div>
+      <!-- Row 3: 1 Polish, 3 intl -->
       <div class="participant-card reveal">
         <div class="participant-photo"><img src="participants/Maciej Malysz.jpeg" alt="Maciej Małysz"></div>
         <div class="participant-name">Maciej Małysz</div>
@@ -403,82 +376,40 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
         <div class="participant-org">Project A</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.08s">
-        <div class="participant-photo"><img src="participants/Georgi Mitov.jpeg" alt="Georgi Mitov"></div>
-        <div class="participant-name">Georgi Mitov</div>
-        <div class="participant-org">BrightCap</div>
+        <div class="participant-photo"><img src="participants/Kate Kovalenko.jpeg" alt="Kate Kovalenko"></div>
+        <div class="participant-name">Kate Kovalenko</div>
+        <div class="participant-org">Momenta Ventures</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.12s">
         <div class="participant-photo"><img src="participants/Fabian Janz.jpeg" alt="Fabian Janz"></div>
         <div class="participant-name">Fabian Janz</div>
         <div class="participant-org">Ignite Next</div>
       </div>
-      <!-- Row 5: 1 Polish, 3 intl — order 1 -->
+      <!-- Row 4: 2 Polish, 2 intl -->
       <div class="participant-card reveal">
         <div class="participant-photo"><img src="participants/Alessandro De Benedetti.jpeg" alt="Alessandro De Benedetti"></div>
         <div class="participant-name">Alessandro De Benedetti</div>
         <div class="participant-org">Northzone</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.04s">
-        <div class="participant-photo"><img src="participants/Ignacy Drzewiecki.png" alt="Ignacy Drzewiecki"></div>
-        <div class="participant-name">Ignacy Drzewiecki</div>
-        <div class="participant-org">OTB Ventures</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.08s">
-        <div class="participant-photo"><img src="participants/Angela Chou.jpeg" alt="Angela Chou"></div>
-        <div class="participant-name">Angela Chou</div>
-        <div class="participant-org">Felix Capital</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.12s">
-        <div class="participant-photo"><img src="participants/Milana Slobtcova.jpeg" alt="Milana Slobtcova"></div>
-        <div class="participant-name">Milana Slobtcova</div>
-        <div class="participant-org">Underline Ventures</div>
-      </div>
-      <!-- Row 6: 1 Polish, 3 intl — order 1 -->
-      <div class="participant-card reveal">
-        <div class="participant-photo"><img src="participants/Donat Simon.png" alt="Donat Simon"></div>
-        <div class="participant-name">Donat Simon</div>
-        <div class="participant-org">Portfolion</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.04s">
-        <div class="participant-photo"><img src="participants/Emilie Vallauri.jpeg" alt="Emilie Vallauri"></div>
-        <div class="participant-name">Emilie Vallauri</div>
-        <div class="participant-org">Techstars</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.08s">
         <div class="participant-photo"><img src="participants/Eliza Kruczkowska.png" alt="Eliza Kruczkowska"></div>
         <div class="participant-name">Eliza Kruczkowska</div>
         <div class="participant-org">EIC Board</div>
       </div>
-      <div class="participant-card reveal" style="transition-delay:.12s">
-        <div class="participant-photo"><img src="participants/Sam Baker.png" alt="Sam Baker"></div>
-        <div class="participant-name">Sam Baker</div>
-        <div class="participant-org">Planet A</div>
-      </div>
-      <!-- Row 7: order 1 → order 2 -->
-      <div class="participant-card reveal">
-        <div class="participant-photo"><img src="participants/Ondrej Lipold.png" alt="Ondřej Lipold"></div>
-        <div class="participant-name">Ondřej Lipold</div>
-        <div class="participant-org">Tensor Ventures</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.04s">
-        <div class="participant-photo"><img src="participants/Tarik Dutkuner.png" alt="Tarik Dutkuner"></div>
-        <div class="participant-name">Tarik Dutkuner</div>
-        <div class="participant-org">Skybound VC</div>
-      </div>
       <div class="participant-card reveal" style="transition-delay:.08s">
-        <div class="participant-photo"><img src="participants/Beth Porter.png" alt="Beth Porter"></div>
-        <div class="participant-name">Beth Porter</div>
-        <div class="participant-org">C10labs</div>
+        <div class="participant-photo"><img src="participants/Marek Gajewski.jpeg" alt="Marek Gajewski"></div>
+        <div class="participant-name">Marek Gajewski</div>
+        <div class="participant-org">Reem Ventures</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.12s">
-        <div class="participant-photo"><img src="participants/Dawid Sugier.jpeg" alt="Dawid Sugier"></div>
-        <div class="participant-name">Dawid Sugier</div>
-        <div class="participant-org">Inovo</div>
-      </div>
-      <!-- Row 8: 2 Polish, 2 intl — order 2 -->
-      <div class="participant-card reveal">
         <div class="participant-photo"><img src="participants/Marco Constantini.jpeg" alt="Marco Constantini"></div>
         <div class="participant-name">Marco Constantini</div>
+        <div class="participant-org">Nova Capital</div>
+      </div>
+      <!-- Row 5: 2 Polish, 2 intl -->
+      <div class="participant-card reveal">
+        <div class="participant-photo"><img src="participants/Lorenzo Meneghini.jpeg" alt="Lorenzo Meneghini"></div>
+        <div class="participant-name">Lorenzo Meneghini</div>
         <div class="participant-org">Nova Capital</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.04s">
@@ -492,57 +423,36 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
         <div class="participant-org">Heartfelt</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.12s">
-        <div class="participant-photo"><img src="participants/Marek Gajewski.jpeg" alt="Marek Gajewski"></div>
-        <div class="participant-name">Marek Gajewski</div>
-        <div class="participant-org">Reem Ventures</div>
-      </div>
-      <!-- Row 9: 2 Polish, 2 intl — order 2 -->
-      <div class="participant-card reveal">
-        <div class="participant-photo"><img src="participants/Lorenzo Meneghini.jpeg" alt="Lorenzo Meneghini"></div>
-        <div class="participant-name">Lorenzo Meneghini</div>
-        <div class="participant-org">Nova Capital</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.04s">
         <div class="participant-photo"><img src="participants/Stanislaw Knaflewski.jpeg" alt="Stanisław Knaflewski"></div>
         <div class="participant-name">Stanisław Knaflewski</div>
         <div class="participant-org">Altamira</div>
       </div>
-      <div class="participant-card reveal" style="transition-delay:.08s">
+      <!-- Row 6: 2 Polish, 2 intl -->
+      <div class="participant-card reveal">
         <div class="participant-photo"><img src="participants/Maria Portoles.jpeg" alt="Maria Portoles"></div>
         <div class="participant-name">Maria Portoles</div>
         <div class="participant-org">Vsquared Ventures</div>
       </div>
-      <div class="participant-card reveal" style="transition-delay:.12s">
+      <div class="participant-card reveal" style="transition-delay:.04s">
         <div class="participant-photo"><img src="participants/Magdalena Marciniak.jpeg" alt="Magdalena Marciniak"></div>
         <div class="participant-name">Magdalena Marciniak</div>
         <div class="participant-org">i&amp;i Bio</div>
       </div>
-      <!-- Row 10: 2 Polish, 2 intl — order 2 -->
-      <div class="participant-card reveal">
+      <div class="participant-card reveal" style="transition-delay:.08s">
         <div class="participant-photo"><img src="participants/Michael Baczyk.jpeg" alt="Michael Baczyk"></div>
         <div class="participant-name">Michael Baczyk</div>
         <div class="participant-org">Heartcore Capital</div>
       </div>
-      <div class="participant-card reveal" style="transition-delay:.04s">
+      <div class="participant-card reveal" style="transition-delay:.12s">
         <div class="participant-photo"><img src="participants/Adam Dvorak.jpeg" alt="Adam Dvorak"></div>
         <div class="participant-name">Adam Dvorak</div>
         <div class="participant-org">Presto Tech Horizons</div>
       </div>
-      <div class="participant-card reveal" style="transition-delay:.08s">
+      <!-- Row 7: 2 Polish, 2 intl -->
+      <div class="participant-card reveal">
         <div class="participant-photo"><img src="participants/Szymon Brodziak.jpeg" alt="Szymon Brodziak"></div>
         <div class="participant-name">Szymon Brodziak</div>
         <div class="participant-org">s16vc</div>
-      </div>
-      <div class="participant-card reveal" style="transition-delay:.12s">
-        <div class="participant-photo"><img src="participants/Piotr Bukanski.jpeg" alt="Piotr Bukański"></div>
-        <div class="participant-name">Piotr Bukański</div>
-        <div class="participant-org">Acurio Ventures</div>
-      </div>
-      <!-- Row 11: 2 Polish, 2 intl — order 2 -->
-      <div class="participant-card reveal">
-        <div class="participant-photo"><img src="participants/Marcus Erken.jpeg" alt="Marcus Erken"></div>
-        <div class="participant-name">Marcus Erken</div>
-        <div class="participant-org">Sunfish Partners</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.04s">
         <div class="participant-photo"><img src="participants/Radoslav Cuha.png" alt="Radoslav Cuha"></div>
@@ -550,14 +460,14 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
         <div class="participant-org">Portfolion</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.08s">
-        <div class="participant-photo"><img src="participants/Gabriela Brodzinska.png" alt="Gabriela Brodzinska"></div>
-        <div class="participant-name">Gabriela Brodzinska</div>
-        <div class="participant-org">Betacluster</div>
+        <div class="participant-photo"><img src="participants/Marcus Erken.jpeg" alt="Marcus Erken"></div>
+        <div class="participant-name">Marcus Erken</div>
+        <div class="participant-org">Sunfish Partners</div>
       </div>
       <div class="participant-card reveal" style="transition-delay:.12s">
-        <div class="participant-photo"><img src="participants/Tomasz Koscielniak.jpeg" alt="Tomasz Kościelniak"></div>
-        <div class="participant-name">Tomasz Kościelniak</div>
-        <div class="participant-org">Smok VC</div>
+        <div class="participant-photo"><img src="participants/Piotr Bukanski.jpeg" alt="Piotr Bukański"></div>
+        <div class="participant-name">Piotr Bukański</div>
+        <div class="participant-org">Acurio Ventures</div>
       </div>
     </div>
   </div>
@@ -771,7 +681,6 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
     </div>
   </div>
 </footer>
-</div>
 
 <script>
 document.addEventListener('DOMContentLoaded',()=>{
