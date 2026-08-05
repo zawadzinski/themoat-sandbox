@@ -1,0 +1,671 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Let others know you'll be at THE MOAT</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+
+<!--
+  Open Graph / Twitter preview tags.
+  Replace YOUR-SITE-NAME below with your actual site name
+  once you've deployed (Site settings → Change site name).
+-->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Let others know you'll be at THE MOAT">
+<meta property="og:description" content="Upload your photo, adjust the crop, and create your graphic for the event.">
+<meta property="og:image" content="https://themoat.hard2beat.vc/image.png">
+<meta property="og:url" content="https://themoat.hard2beat.vc/">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Let others know you'll be at THE MOAT">
+<meta name="twitter:description" content="Upload your photo, adjust the crop, and create your graphic for the event.">
+<meta name="twitter:image" content="https://themoat.hard2beat.vc/image.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root {
+    --bg: #f7f5fb;
+    --surface: #ffffff;
+    --text: #1f1b2e;
+    --text-muted: #6b7280;
+    --accent: #7c3aed;
+    --accent-dark: #6d28d9;
+    --border: #e6e1f5;
+  }
+
+  * { box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: auto !important;
+    min-height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto !important;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    touch-action: pan-y;
+  }
+
+  .wrap {
+    max-width: 560px;
+    margin: 0 auto;
+    padding: 32px 20px 56px;
+  }
+
+  .hero {
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .hero h1 {
+    font-family: 'Sora', sans-serif;
+    font-weight: 800;
+    font-size: 28px;
+    letter-spacing: -0.02em;
+    margin: 0 auto 10px;
+  }
+
+  /* On wider screens keep the title on a single line, but constrain it to
+     the same column width as the cards below (max 520px, matching .wrap's
+     content width) so its edges line up with the rest of the content
+     instead of stretching wider than everything else. On narrow phone
+     screens it falls back to the default wrapping behaviour. */
+  @media (min-width: 480px) {
+    .hero h1 {
+      white-space: nowrap;
+      max-width: 520px;
+      font-size: clamp(16px, 3.2vw, 22px);
+    }
+  }
+
+  .hero .subtitle {
+    color: var(--text-muted);
+    font-size: 15px;
+    line-height: 1.5;
+    margin: 0;
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 2px rgba(31, 27, 46, 0.04);
+  }
+
+  .card-title {
+    font-family: 'Sora', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin: 0 0 16px;
+  }
+
+  .preview-wrap {
+    position: relative;
+    max-width: 100%;
+    margin: 0 auto 18px;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(31, 27, 46, 0.12);
+    background: #fafafa;
+    touch-action: none; /* capture gestures only inside the preview */
+  }
+
+  #c {
+    display: block;
+    width: 100%;
+    height: auto;
+    touch-action: none;
+    cursor: grab;
+  }
+
+  #c:active { cursor: grabbing; }
+
+  .placeholder {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    font-size: 14px;
+    font-weight: 500;
+    background: rgba(250, 250, 250, 0.9);
+    pointer-events: none;
+    transition: opacity 0.2s;
+  }
+
+  .placeholder.hidden { opacity: 0; }
+
+  .hint {
+    color: var(--text-muted);
+    font-size: 12.5px;
+    line-height: 1.5;
+    margin: 10px 0 0;
+    text-align: center;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 12px 14px;
+    font-size: 15px;
+    font-family: inherit;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    outline: none;
+    background: var(--bg);
+    transition: border-color 0.15s, background 0.15s;
+  }
+
+  .input-field:focus {
+    border-color: var(--accent);
+    background: var(--surface);
+  }
+
+  .slider-label {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text);
+    margin: 14px 0 6px;
+  }
+
+  .slider-label:first-of-type { margin-top: 0; }
+
+  .slider-label span {
+    color: var(--accent);
+    font-variant-numeric: tabular-nums;
+  }
+
+  input[type="range"] {
+    width: 100%;
+    accent-color: var(--accent);
+  }
+
+  .buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .btn {
+    padding: 12px 22px;
+    font-size: 14.5px;
+    font-weight: 600;
+    font-family: inherit;
+    cursor: pointer;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: background 0.15s, transform 0.1s, border-color 0.15s;
+  }
+
+  .btn:disabled {
+    background: #eee !important;
+    color: #aaa !important;
+    border-color: #eee !important;
+    cursor: not-allowed;
+  }
+
+  .btn:active:not(:disabled) { transform: scale(0.98); }
+
+  .btn-primary {
+    background: var(--accent);
+    color: white;
+  }
+  .btn-primary:hover:not(:disabled) { background: var(--accent-dark); }
+
+  .btn-secondary {
+    background: var(--bg);
+    color: var(--text);
+    border-color: var(--border);
+    width: 100%;
+  }
+  .btn-secondary:hover { border-color: var(--accent); color: var(--accent); }
+
+  .checkbox-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    justify-content: center;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--text);
+    margin-top: 12px;
+    cursor: pointer;
+  }
+
+  .checkbox-row input {
+    accent-color: var(--accent);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+  }
+
+  #duotoneIntensityRow {
+    margin-top: 10px;
+  }
+
+  .btn-outline {
+    background: transparent;
+    color: var(--text);
+    border-color: var(--border);
+  }
+  .btn-outline:hover { border-color: var(--accent); color: var(--accent); }
+</style>
+</head>
+
+<body>
+<div class="wrap">
+  <header class="hero">
+    <h1>Let others know you'll be at THE MOAT</h1>
+    <p class="subtitle">Upload your photo, adjust the crop, add your details, then download your graphic.</p>
+  </header>
+
+  <section class="card">
+    <h2 class="card-title">Photo</h2>
+    <div class="preview-wrap">
+      <canvas id="c"></canvas>
+      <div class="placeholder" id="placeholder">No photo uploaded</div>
+    </div>
+    <input type="file" id="uploader" accept="image/*" hidden>
+    <button class="btn btn-secondary" id="uploadBtn">📷 Upload Photo</button>
+    <label class="checkbox-row">
+      <input type="checkbox" id="duotoneToggle" checked>
+      Apply purple duotone effect
+    </label>
+    <div id="duotoneIntensityRow">
+      <div class="slider-label"><span>Effect strength</span><span id="duotoneVal">35%</span></div>
+      <input type="range" id="duotoneSlider" min="0" max="100" value="35">
+    </div>
+    <p class="hint">Your photo stays in your browser — it's never uploaded anywhere.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="card-title">Text</h2>
+    <div class="form-group">
+      <input type="text" id="nameInput" class="input-field" placeholder="Full Name">
+      <input type="text" id="orgInput" class="input-field" placeholder="Company">
+    </div>
+  </section>
+
+  <section class="card">
+    <h2 class="card-title">Adjust</h2>
+    <div class="slider-label"><span>Zoom</span><span id="zoomVal">100%</span></div>
+    <input type="range" id="zoomSlider" min="50" max="300" value="100">
+    <div class="slider-label"><span>X Position</span><span id="xVal">0</span></div>
+    <input type="range" id="xSlider" min="-50" max="50" value="0">
+    <div class="slider-label"><span>Y Position</span><span id="yVal">0</span></div>
+    <input type="range" id="ySlider" min="-50" max="50" value="0">
+    <p class="hint">You can also drag the photo with your finger or mouse directly in the preview, and pinch-to-zoom on your phone.</p>
+  </section>
+
+  <section class="card">
+    <h2 class="card-title">Export</h2>
+    <div class="buttons">
+      <button class="btn btn-outline" id="resetBtn">↺ Reset</button>
+      <button class="btn btn-primary" id="downloadBtn" disabled>⬇ Download Image</button>
+    </div>
+  </section>
+</div>
+
+<script>
+(function () {
+  var canvas = document.getElementById('c');
+  var ctx = canvas.getContext('2d');
+  var placeholder = document.getElementById('placeholder');
+  var uploader = document.getElementById('uploader');
+  var uploadBtn = document.getElementById('uploadBtn');
+  var duotoneToggle = document.getElementById('duotoneToggle');
+  var duotoneSlider = document.getElementById('duotoneSlider');
+  var duotoneVal = document.getElementById('duotoneVal');
+  var duotoneIntensityRow = document.getElementById('duotoneIntensityRow');
+  var downloadBtn = document.getElementById('downloadBtn');
+  var resetBtn = document.getElementById('resetBtn');
+  var nameInput = document.getElementById('nameInput');
+  var orgInput = document.getElementById('orgInput');
+
+  var zoomSlider = document.getElementById('zoomSlider');
+  var xSlider = document.getElementById('xSlider');
+  var ySlider = document.getElementById('ySlider');
+  var zoomVal = document.getElementById('zoomVal');
+  var xVal = document.getElementById('xVal');
+  var yVal = document.getElementById('yVal');
+
+  var FRAME_SRC = 'image.png';
+  var FALLBACK_SIZE = 1080;
+
+  var frameImg = new Image();
+  var frameLoaded = false;
+  var rawPhoto = null;   // original, unprocessed Image
+  var photo = null;      // Image or <canvas> actually drawn (with duotone applied, if on)
+
+  // --- Name / Company text layout, tuned to the THE MOAT template ---
+  // All values are fractions of the canvas width/height, so they scale
+  // automatically with the real frame's resolution. Tweak these if the
+  // text doesn't line up with your actual frame.png.
+  var TEXT_X_FRAC = 0.46;           // left edge of the text column
+  var TEXT_MAX_WIDTH_FRAC = 0.50;   // available width before wrapping
+  var NAME_FONT_FRAC = 0.05;        // name font size
+  var NAME_LINE_HEIGHT_FRAC = 0.048;
+  var NAME_LAST_LINE_Y_FRAC = 0.68; // baseline of the name's last line
+  var COMPANY_FONT_FRAC = 0.028;
+  var COMPANY_GAP_FRAC = 0.048;     // gap from name's last line to company
+
+  // --- Duotone effect colors (shadows -> highlights) ---
+  var DUOTONE_SHADOW = { r: 49, g: 10, b: 101 };     // deep indigo/purple
+  var DUOTONE_HIGHLIGHT = { r: 236, g: 72, b: 153 }; // magenta/pink
+
+  var zoom = 100;     // %
+  var offX = 0;        // % of canvas width, -50..50
+  var offY = 0;        // % of canvas height, -50..50
+
+  function applyDuotone(image) {
+    var off = document.createElement('canvas');
+    off.width = image.naturalWidth || image.width;
+    off.height = image.naturalHeight || image.height;
+    var octx = off.getContext('2d');
+    octx.drawImage(image, 0, 0);
+    var imgData = octx.getImageData(0, 0, off.width, off.height);
+    var d = imgData.data;
+    var s = DUOTONE_SHADOW, h = DUOTONE_HIGHLIGHT;
+    var intensity = parseFloat(duotoneSlider.value) / 100; // 0 = plain grayscale, 1 = full duotone
+    for (var i = 0; i < d.length; i += 4) {
+      var lum = (0.299 * d[i] + 0.587 * d[i + 1] + 0.114 * d[i + 2]) / 255;
+      var gray = lum * 255;
+      var duoR = s.r + lum * (h.r - s.r);
+      var duoG = s.g + lum * (h.g - s.g);
+      var duoB = s.b + lum * (h.b - s.b);
+      d[i] = gray + intensity * (duoR - gray);
+      d[i + 1] = gray + intensity * (duoG - gray);
+      d[i + 2] = gray + intensity * (duoB - gray);
+    }
+    octx.putImageData(imgData, 0, 0);
+    return off;
+  }
+
+  function refreshPhoto() {
+    if (!rawPhoto) { photo = null; return; }
+    photo = duotoneToggle.checked ? applyDuotone(rawPhoto) : rawPhoto;
+  }
+
+  function setCanvasSize(w, h) {
+    canvas.width = w;
+    canvas.height = h;
+  }
+
+  frameImg.onload = function () {
+    frameLoaded = true;
+    setCanvasSize(frameImg.naturalWidth, frameImg.naturalHeight);
+    draw();
+  };
+  frameImg.onerror = function () {
+    frameLoaded = false;
+    setCanvasSize(FALLBACK_SIZE, FALLBACK_SIZE);
+    draw();
+  };
+  frameImg.src = FRAME_SRC;
+
+  // Ensure a sane initial size before the frame loads
+  setCanvasSize(FALLBACK_SIZE, FALLBACK_SIZE);
+
+  function draw() {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.fillStyle = '#ffffff';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    if (photo) {
+      var baseScale = Math.max(canvas.width / photo.width, canvas.height / photo.height);
+      var scale = baseScale * (zoom / 100);
+      var w = photo.width * scale;
+      var h = photo.height * scale;
+      var cx = canvas.width / 2 + (offX / 100) * canvas.width;
+      var cy = canvas.height / 2 + (offY / 100) * canvas.height;
+      ctx.drawImage(photo, cx - w / 2, cy - h / 2, w, h);
+    }
+
+    if (frameLoaded) {
+      ctx.drawImage(frameImg, 0, 0, canvas.width, canvas.height);
+    }
+
+    drawText();
+    placeholder.classList.toggle('hidden', !!photo);
+  }
+
+  function wrapText(text, maxWidth) {
+    var words = text.split(' ');
+    var lines = [];
+    var current = '';
+    for (var i = 0; i < words.length; i++) {
+      var test = current ? current + ' ' + words[i] : words[i];
+      if (ctx.measureText(test).width > maxWidth && current) {
+        lines.push(current);
+        current = words[i];
+      } else {
+        current = test;
+      }
+    }
+    if (current) lines.push(current);
+    return lines;
+  }
+
+  function drawText() {
+    var name = nameInput.value.trim().toUpperCase();
+    var org = orgInput.value.trim();
+
+    var x = canvas.width * TEXT_X_FRAC;
+    var maxWidth = canvas.width * TEXT_MAX_WIDTH_FRAC;
+
+    ctx.textAlign = 'left';
+    ctx.fillStyle = '#000000';
+
+    var nameLines = [];
+    var nameFontFrac = NAME_FONT_FRAC;
+    if (name) {
+      // Try the normal size first; if it still doesn't fit in 2 lines,
+      // shrink it step by step (down to 60% of the base size) instead of
+      // silently cutting off extra lines of text.
+      while (true) {
+        ctx.font = "800 " + Math.round(canvas.height * nameFontFrac) + "px 'Sora', sans-serif";
+        nameLines = wrapText(name, maxWidth);
+        if (nameLines.length <= 2 || nameFontFrac <= NAME_FONT_FRAC * 0.6) break;
+        nameFontFrac -= 0.002;
+      }
+      if (nameLines.length > 2) nameLines = nameLines.slice(0, 2); // final safety net
+    }
+
+    var shrinkRatio = nameFontFrac / NAME_FONT_FRAC;
+    var lineHeight = canvas.height * NAME_LINE_HEIGHT_FRAC * shrinkRatio;
+    var lastLineY = canvas.height * NAME_LAST_LINE_Y_FRAC;
+    var startY = lastLineY - (nameLines.length - 1) * lineHeight;
+
+    for (var i = 0; i < nameLines.length; i++) {
+      ctx.fillText(nameLines[i], x, startY + i * lineHeight);
+    }
+
+    if (org) {
+      ctx.font = "700 " + Math.round(canvas.height * COMPANY_FONT_FRAC) + "px 'Sora', sans-serif";
+      ctx.fillText(org, x, lastLineY + canvas.height * COMPANY_GAP_FRAC);
+    }
+  }
+
+  nameInput.addEventListener('input', draw);
+  orgInput.addEventListener('input', draw);
+
+  // --- Upload ---
+  uploadBtn.addEventListener('click', function () { uploader.click(); });
+
+  uploader.addEventListener('change', function (e) {
+    var file = e.target.files && e.target.files[0];
+    if (!file) return;
+    var reader = new FileReader();
+    reader.onload = function (ev) {
+      var img = new Image();
+      img.onload = function () {
+        rawPhoto = img;
+        refreshPhoto();
+        zoom = 100; offX = 0; offY = 0;
+        zoomSlider.value = 100; xSlider.value = 0; ySlider.value = 0;
+        zoomVal.textContent = '100%'; xVal.textContent = '0'; yVal.textContent = '0';
+        downloadBtn.disabled = false;
+        draw();
+      };
+      img.src = ev.target.result;
+    };
+    reader.readAsDataURL(file);
+  });
+
+  duotoneToggle.addEventListener('change', function () {
+    duotoneIntensityRow.style.display = duotoneToggle.checked ? '' : 'none';
+    refreshPhoto();
+    draw();
+  });
+
+  duotoneSlider.addEventListener('input', function () {
+    duotoneVal.textContent = duotoneSlider.value + '%';
+    refreshPhoto();
+    draw();
+  });
+
+  // --- Sliders ---
+  zoomSlider.addEventListener('input', function () {
+    zoom = parseFloat(zoomSlider.value);
+    zoomVal.textContent = Math.round(zoom) + '%';
+    draw();
+  });
+  xSlider.addEventListener('input', function () {
+    offX = parseFloat(xSlider.value);
+    xVal.textContent = Math.round(offX);
+    draw();
+  });
+  ySlider.addEventListener('input', function () {
+    offY = parseFloat(ySlider.value);
+    yVal.textContent = Math.round(offY);
+    draw();
+  });
+
+  // --- Reset ---
+  resetBtn.addEventListener('click', function () {
+    zoom = 100; offX = 0; offY = 0;
+    zoomSlider.value = 100; xSlider.value = 0; ySlider.value = 0;
+    zoomVal.textContent = '100%'; xVal.textContent = '0'; yVal.textContent = '0';
+    draw();
+  });
+
+  // --- Drag to reposition (mouse + touch, single pointer) ---
+  var dragging = false;
+  var dragStartClientX = 0, dragStartClientY = 0;
+  var dragStartOffX = 0, dragStartOffY = 0;
+
+  canvas.addEventListener('pointerdown', function (e) {
+    if (!photo) return;
+    dragging = true;
+    dragStartClientX = e.clientX;
+    dragStartClientY = e.clientY;
+    dragStartOffX = offX;
+    dragStartOffY = offY;
+    canvas.setPointerCapture(e.pointerId);
+  });
+
+  canvas.addEventListener('pointermove', function (e) {
+    if (!dragging || pinching) return;
+    var rect = canvas.getBoundingClientRect();
+    var dxPercent = ((e.clientX - dragStartClientX) / rect.width) * 100;
+    var dyPercent = ((e.clientY - dragStartClientY) / rect.height) * 100;
+    offX = clamp(dragStartOffX + dxPercent, -50, 50);
+    offY = clamp(dragStartOffY + dyPercent, -50, 50);
+    xSlider.value = offX; ySlider.value = offY;
+    xVal.textContent = Math.round(offX); yVal.textContent = Math.round(offY);
+    draw();
+  });
+
+  function endDrag() { dragging = false; }
+  canvas.addEventListener('pointerup', endDrag);
+  canvas.addEventListener('pointercancel', endDrag);
+  canvas.addEventListener('pointerleave', endDrag);
+
+  // --- Pinch to zoom (two-finger touch) ---
+  var pinching = false;
+  var pinchStartDist = 0;
+  var pinchStartZoom = 100;
+
+  canvas.addEventListener('touchstart', function (e) {
+    if (!photo) return;
+    if (e.touches.length === 2) {
+      pinching = true;
+      dragging = false;
+      pinchStartDist = touchDistance(e.touches[0], e.touches[1]);
+      pinchStartZoom = zoom;
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  canvas.addEventListener('touchmove', function (e) {
+    if (pinching && e.touches.length === 2) {
+      var dist = touchDistance(e.touches[0], e.touches[1]);
+      var ratio = dist / pinchStartDist;
+      zoom = clamp(pinchStartZoom * ratio, 50, 300);
+      zoomSlider.value = zoom;
+      zoomVal.textContent = Math.round(zoom) + '%';
+      draw();
+      e.preventDefault();
+    }
+  }, { passive: false });
+
+  canvas.addEventListener('touchend', function (e) {
+    if (e.touches.length < 2) pinching = false;
+  });
+
+  function touchDistance(t1, t2) {
+    var dx = t1.clientX - t2.clientX;
+    var dy = t1.clientY - t2.clientY;
+    return Math.sqrt(dx * dx + dy * dy);
+  }
+
+  function clamp(v, min, max) { return Math.max(min, Math.min(max, v)); }
+
+  function dataURLtoBlob(dataUrl) {
+    var parts = dataUrl.split(',');
+    var mime = parts[0].match(/:(.*?);/)[1];
+    var binary = atob(parts[1]);
+    var len = binary.length;
+    var u8arr = new Uint8Array(len);
+    while (len--) { u8arr[len] = binary.charCodeAt(len); }
+    return new Blob([u8arr], { type: mime });
+  }
+
+  // --- Download ---
+  downloadBtn.addEventListener('click', function () {
+    var blob = dataURLtoBlob(canvas.toDataURL('image/png'));
+    var url = URL.createObjectURL(blob);
+    var a = document.createElement('a');
+    a.href = url;
+    a.download = 'event-graphic.png';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  });
+
+  draw();
+})();
+</script>
+</body>
+</html>
