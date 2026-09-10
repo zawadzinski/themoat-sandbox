@@ -187,10 +187,13 @@ section{padding:100px 0;position:relative}
 .partners{margin-top:36px;text-align:center;animation:fadeUp .8s ease-out .85s both}
 .partners-label{font-size:11px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--tm);margin-bottom:12px}
 .partners-logos{display:flex;justify-content:center;align-items:center;gap:40px;flex-wrap:wrap}
+.logos-break{flex-basis:100%;height:0;margin:0}
+@media(max-width:760px){.logos-break{display:none}}
 .partner-logo{opacity:1;transition:opacity .3s ease;filter:brightness(0) invert(1)}
 .partner-logo:hover{opacity:.85}
 .partner-logo img,.partner-logo svg{height:56px;width:auto;display:block}
 .partners--supporting{margin-top:28px}
+@media(min-width:761px){.partners--supporting .partners-logos{row-gap:14px}}
 .partners--supporting .partners-label{margin-bottom:30px}
 .partners--supporting .partner-logo img,.partners--supporting .partner-logo svg{height:30px}
 
@@ -332,6 +335,19 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
         </a>
         <a href="https://www.gotosmith.eu/" target="_blank" rel="nofollow noopener" class="partner-logo">
           <img src="assets/gotosmith-logo.svg" alt="GoToSmith" style="height:20px">
+        </a>
+        <a href="https://izbadualuse.pl/" target="_blank" rel="nofollow noopener" class="partner-logo">
+          <img src="assets/pidu-logo.svg" alt="PIDU — Polska Izba Dual Use" style="height:30px">
+        </a>
+        <div class="logos-break"></div>
+        <a href="https://llw.law/" target="_blank" rel="nofollow noopener" class="partner-logo">
+          <img src="assets/llw-logo.png" alt="LLW — Lewczuk Łyszczarek Szymczyk" style="height:36px">
+        </a>
+        <a href="https://fundequate.com/" target="_blank" rel="nofollow noopener" class="partner-logo">
+          <img src="assets/fundequate-logo.png" alt="Fundequate" style="height:31px">
+        </a>
+        <a href="https://theheart.legal/" target="_blank" rel="nofollow noopener" class="partner-logo">
+          <img src="assets/theheart-legal-logo.png" alt="The Heart Legal" style="height:46px">
         </a>
       </div>
     </div>
@@ -729,18 +745,27 @@ footer{padding:36px 0;border-top:1px solid var(--bd)}
   <div class="container">
     <div class="section-head reveal">
       <div class="label-sm">Agenda · 23 September 2026</div>
-      <h2>One afternoon. <span class="hl">Maximum value.</span></h2>
-      <p class="sub-head">Focused pitches, hand-matched 1-on-1 meetings, and open networking throughout the&nbsp;day.</p>
+      <h2>One day. <span class="hl">Maximum value.</span></h2>
+      <p class="sub-head">A keynote, three expert panels, the &ldquo;Hard Questions&rdquo; pitch contest, and open networking throughout the&nbsp;day.</p>
     </div>
     <div class="timeline">
 
-      <div class="tl-item reveal" style="transition-delay:.04s"><div class="tl-time">13:00 – 13:15</div><div class="tl-body"><h3>Opening</h3><p>Welcome and the thesis behind THE MOAT.</p></div></div>
-      <div class="tl-item reveal" style="transition-delay:.08s"><div class="tl-time">13:15 – 15:00</div><div class="tl-body"><h3>"Hard Questions" Pitch Contest</h3><p>Top 10 finalists pitch live, followed by expert-level questions on their technical&nbsp;moat.</p><span class="tl-tag main">Main Event</span></div></div>
-      <div class="tl-item reveal" style="transition-delay:.1s"><div class="tl-time">15:00 – 16:30</div><div class="tl-body"><h3>Networking &amp; 1-on-1 Meetings</h3><p>First matchmaking block. Meet founders and investors in private, hand-picked&nbsp;sessions.</p><span class="tl-tag main">Matchmaking</span></div></div>
-      <div class="tl-item reveal" style="transition-delay:.14s"><div class="tl-time">16:30 – 17:15</div><div class="tl-body"><h3>Hard2beat Showcase</h3><p>Three portfolio companies currently fundraising present their technology and&nbsp;traction.</p></div></div>
-      <div class="tl-item reveal" style="transition-delay:.18s"><div class="tl-time">17:15 – 18:45</div><div class="tl-body"><h3>Networking &amp; 1-on-1 Meetings</h3><p>Second matchmaking block. Continue matched meetings or build new&nbsp;connections.</p><span class="tl-tag main">Matchmaking</span></div></div>
-      <div class="tl-item reveal" style="transition-delay:.22s"><div class="tl-time">18:45 – 19:30</div><div class="tl-body"><h3>Fireside Chat</h3><p>International investors share their experience backing Polish deep&nbsp;tech.</p></div></div>
-      <div class="tl-item reveal" style="transition-delay:.26s"><div class="tl-time">19:30 – late</div><div class="tl-body"><h3>After Party</h3><p>Drinks, final matchmaking rounds, and open conversations at&nbsp;SEN.</p></div></div>
+      <div class="tl-item reveal" style="transition-delay:.04s"><div class="tl-time">11:15 – 12:00</div><div class="tl-body"><h3>Registration &amp; Welcome Coffee</h3></div></div>
+      <div class="tl-item reveal" style="transition-delay:.08s"><div class="tl-time">12:00 – 12:20</div><div class="tl-body"><h3>Opening</h3><p>Welcome speeches and the thesis behind THE&nbsp;MOAT.</p></div></div>
+      <div class="tl-item reveal" style="transition-delay:.12s"><div class="tl-time">12:20 – 12:50</div><div class="tl-body"><h3>Keynote Speech</h3><p>How to IPO your deep tech on NASDAQ? A case study from the former CureVac&nbsp;CTO.</p><span class="tl-tag main">Keynote</span></div></div>
+      <div class="tl-item reveal" style="transition-delay:.16s"><div class="tl-time">12:50 – 13:00</div><div class="tl-body"><h3>Polish Deep Tech in Numbers</h3><p>A presentation from Hard2beat on the key trends in the&nbsp;industry.</p></div></div>
+      <div class="tl-item reveal" style="transition-delay:.20s"><div class="tl-time">13:00 – 13:35</div><div class="tl-body"><h3>From Deterrence to Dealflow: Defence, Dual-Use and Sovereign&nbsp;Tech</h3><span class="tl-tag">Discussion panel</span></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">13:35 – 13:50</div><div class="tl-body"><h3>Hard2beat Showcase</h3><p>Three portfolio companies currently fundraising present their moats and&nbsp;traction.</p></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">13:50 – 14:50</div><div class="tl-body"><h3>Lunch Break</h3></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">14:50 – 15:00</div><div class="tl-body"><h3>Partners Presentations</h3><p>A thank you note for our partners and&nbsp;sponsors.</p></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">15:00 – 15:35</div><div class="tl-body"><h3>&ldquo;Hard Questions&rdquo; Pitch Contest: Round I</h3><p>10 top deep tech founders presenting their moats (teams&nbsp;1&ndash;5).</p><span class="tl-tag main">Main Event</span></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">15:35 – 16:10</div><div class="tl-body"><h3>Healthcare Beyond the Hype: Clinical Proof, Regulation and&nbsp;Reimbursement</h3><span class="tl-tag">Discussion panel</span></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">16:10 – 16:30</div><div class="tl-body"><h3>Coffee Break</h3></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">16:30 – 17:05</div><div class="tl-body"><h3>&ldquo;Hard Questions&rdquo; Pitch Contest: Round II</h3><p>10 top deep tech founders presenting their moats (teams&nbsp;6&ndash;10).</p><span class="tl-tag main">Main Event</span></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">17:05 – 17:40</div><div class="tl-body"><h3>AI Leaves the Browser: The New Industrial&nbsp;Stack</h3><span class="tl-tag">Discussion panel</span></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">17:40 – 18:00</div><div class="tl-body"><h3>Pitch Contest Awards &amp; Closing Remarks</h3><p>Winner announcement and closing&nbsp;remarks.</p></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">18:00 – 19:00</div><div class="tl-body"><h3>Closing Drinks &amp; Transition to Afterparty</h3></div></div>
+      <div class="tl-item reveal" style="transition-delay:.24s"><div class="tl-time">19:00 – late</div><div class="tl-body"><h3>The Moat Afterparty</h3><p>Drinks, final matchmaking rounds, and open&nbsp;conversations.</p><span class="tl-tag">Afterparty</span></div></div>
     </div>
   </div>
 </section>
